@@ -29,4 +29,12 @@ public class StatusController {
 
         return Response.status(HttpStatus.OK.value()).entity(statusDto).build();
     }
+
+    @GET
+    @Path("/error")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getError() throws Exception {
+        //just to reproduce exception handling
+        throw new Exception();
+    }
 }

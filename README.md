@@ -49,5 +49,39 @@ Example response:
 Run unit tests:
 
 	mvn test
+	
+###Handle API errors
+Mechanism of handling errors based on [Exception Mapper](https://docs.oracle.com/javaee/7/api/javax/ws/rs/ext/ExceptionMapper.html)
+
+#####Not found:
+Request:
+
+	curl -i http://localhost:8080/jersey2-spring-example/api/invalid
+	
+Response:
+
+	HTTP/1.1 404 Not Found
+	Date: Sun, 03 Apr 2016 20:02:15 GMT
+	Content-Type: application/json
+	Content-Length: 48
+	Server: Jetty(9.2.11.v20150529)
+	
+	{"code":404,"description":"Endpoint not found."}
+	
+#####Internal Server Error:
+Request:
+
+	curl -i http://localhost:8080/jersey2-spring-example/api/status/error
+	
+Response:
+
+	HTTP/1.1 500 Internal Server Error
+	Date: Sun, 03 Apr 2016 20:07:09 GMT
+	Content-Type: application/json
+	Content-Length: 51
+	Server: Jetty(9.2.11.v20150529)
+	
+	{"code":500,"description":"Internal server error."}
+	
 
 
