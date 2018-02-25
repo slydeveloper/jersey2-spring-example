@@ -50,10 +50,10 @@ Run unit tests:
 
 	mvn test
 	
-###Handle API errors
+Handle API errors
 Mechanism of handling errors based on [Exception Mapper](https://docs.oracle.com/javaee/7/api/javax/ws/rs/ext/ExceptionMapper.html)
 
-#####Not found:
+Not found:
 Request:
 
 	curl -i http://localhost:8080/jersey2-spring-example/api/invalid
@@ -68,7 +68,7 @@ Response:
 	
 	{"code":404,"description":"Endpoint not found."}
 	
-#####Internal Server Error:
+Internal Server Error:
 Request:
 
 	curl -i http://localhost:8080/jersey2-spring-example/api/status/error
